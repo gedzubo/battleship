@@ -3,4 +3,10 @@ class User < ApplicationRecord
   has_many :sessions, dependent: :destroy
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
+
+  ONLINE_THRESHOLD = 90.seconds
+
+  def online?
+    last_seen_at&.> ONLINE_THRESHOLD.ago
+  end
 end

@@ -4,6 +4,11 @@ module ApplicationCable
 
     def connect
       set_current_user || reject_unauthorized_connection
+      UserPresenceService.mark_online(current_user)
+    end
+
+    def disconnect
+      UserPresenceService.mark_offline(current_user)
     end
 
     private
