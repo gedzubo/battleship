@@ -6,6 +6,8 @@ A multiplayer Battleship game built with Ruby on Rails. Two players take turns f
 
 Built to explore Rails defaults: Hotwire (Turbo + Stimulus) for real-time updates, ActionCable over SQLite via Solid Cable, Rails built-in authentication, and Tailwind CSS for styling. No unnecessary gems.
 
+For a full breakdown of planned features and technology choices, see [PLAN.md](PLAN.md).
+
 ## Getting started
 
 ```bash
