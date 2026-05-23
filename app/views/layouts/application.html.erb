@@ -24,7 +24,14 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <nav class="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 px-5 py-3 flex items-center justify-between z-10">
+      <%= link_to "Battleship", root_path, class: "font-bold text-lg" %>
+      <% if authenticated? %>
+        <%= button_to "Sign out", session_path, method: :delete, class: "text-sm text-gray-700 underline hover:no-underline cursor-pointer bg-transparent border-0 p-0" %>
+      <% end %>
+    </nav>
+
+    <main class="container mx-auto mt-20 px-5 flex">
       <%= yield %>
     </main>
   </body>
