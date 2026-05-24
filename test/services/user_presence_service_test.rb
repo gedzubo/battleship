@@ -1,6 +1,7 @@
 require "test_helper"
 
 class UserPresenceServiceTest < ActiveSupport::TestCase
+  include ActionCable::TestHelper
   setup do
     @user = users(:one)
     @user.update_columns(last_seen_at: nil)
