@@ -20,7 +20,7 @@ class PlayersControllerTest < ActionDispatch::IntegrationTest
   test "index lists other players but not the current user" do
     sign_in_as(@user)
     get players_path
-    assert_select "li", text: /#{@other.email_address}/
-    assert_select "li", text: /#{@user.email_address}/, count: 0
+    assert_select "li", text: /#{@other.display_name}/
+    assert_select "li", text: /#{@user.display_name}/, count: 0
   end
 end

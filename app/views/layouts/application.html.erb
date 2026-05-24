@@ -33,7 +33,10 @@
         <% end %>
       </div>
       <% if authenticated? %>
-        <%= button_to "Sign out", session_path, method: :delete, class: "text-sm text-gray-700 underline hover:no-underline cursor-pointer bg-transparent border-0 p-0" %>
+        <div class="flex items-center gap-4">
+          <%= link_to "Settings", settings_path, class: "text-sm text-gray-700 hover:underline" %>
+          <%= button_to "Sign out", session_path, method: :delete, class: "text-sm text-gray-700 underline hover:no-underline cursor-pointer bg-transparent border-0 p-0" %>
+        </div>
       <% end %>
     </nav>
 

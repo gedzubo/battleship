@@ -1,1 +1,5 @@
-<h1>Welcome to Battleship game</h1>
+<% if authenticated? %>
+  <h2 class="font-semibold text-xl">Welcome back, <%= Current.user.username.presence || Current.user.email_address %>!</h2>
+<% else %>
+  <h2 class="font-semibold text-xl">Welcome to Battleship</h2>
+<% end %>

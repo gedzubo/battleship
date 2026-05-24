@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def online?
     last_seen_at&.> ONLINE_THRESHOLD.ago
   end
+
+  def display_name
+    username.present? ? "#{username} (#{email_address})" : email_address
+  end
 end
