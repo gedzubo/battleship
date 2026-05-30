@@ -1,0 +1,23 @@
+<div class="w-full max-w-lg">
+  <h1 class="text-2xl font-bold mb-6">Games</h1>
+
+  <% if @games.any? %>
+    <ul class="divide-y divide-gray-200 border border-gray-200 rounded-lg">
+      <% @games.each do |game| %>
+        <li class="flex items-center justify-between px-4 py-3">
+          <div class="text-sm">
+            <span class="font-medium text-gray-900"><%= game.challenger.display_name %></span>
+            <span class="text-gray-400 mx-1">vs</span>
+            <span class="font-medium text-gray-900"><%= game.opponent.display_name %></span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-gray-500 capitalize"><%= game.status %></span>
+            <%= link_to "View", game_path(game), class: "text-xs text-blue-600 hover:underline" %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="text-sm text-gray-500">No games yet. Challenge a player to get started.</p>
+  <% end %>
+</div>

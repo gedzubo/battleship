@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resource :settings, only: %i[ show update ]
   resources :players, only: [ :index ]
+  resources :games, only: %i[ index show create update destroy ]
   post "/heartbeat", to: "heartbeats#create"
 
   root "home#index"

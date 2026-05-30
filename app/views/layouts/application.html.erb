@@ -30,6 +30,7 @@
         <%= link_to "Battleship", root_path, class: "font-bold text-lg" %>
         <% if authenticated? %>
           <%= link_to "Players", players_path, class: "text-sm text-gray-700 hover:underline" %>
+          <%= link_to "Games", games_path, class: "text-sm text-gray-700 hover:underline" %>
         <% end %>
       </div>
       <% if authenticated? %>

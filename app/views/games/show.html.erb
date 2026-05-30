@@ -1,0 +1,26 @@
+<div class="w-full max-w-lg">
+  <h1 class="text-2xl font-bold mb-6">Game</h1>
+
+  <div class="border border-gray-200 rounded-lg divide-y divide-gray-200">
+    <div class="flex justify-between px-4 py-3 text-sm">
+      <span class="text-gray-500">Challenger</span>
+      <span class="font-medium"><%= @game.challenger.display_name %></span>
+    </div>
+    <div class="flex justify-between px-4 py-3 text-sm">
+      <span class="text-gray-500">Opponent</span>
+      <span class="font-medium"><%= @game.opponent.display_name %></span>
+    </div>
+    <div class="flex justify-between px-4 py-3 text-sm">
+      <span class="text-gray-500">Status</span>
+      <span class="font-medium capitalize"><%= @game.status %></span>
+    </div>
+    <% if @game.winner %>
+      <div class="flex justify-between px-4 py-3 text-sm">
+        <span class="text-gray-500">Winner</span>
+        <span class="font-medium"><%= @game.winner.display_name %></span>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Back to games", games_path, class: "mt-4 inline-block text-sm text-blue-600 hover:underline" %>
+</div>
