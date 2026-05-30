@@ -1,0 +1,18 @@
+in_progress_game:
+  challenger: one
+  opponent: two
+  status: in_progress
+  started_at: <%= 1.hour.ago %>
+
+finished_game:
+  challenger: two
+  opponent: one
+  status: finished
+  started_at: <%= 2.hours.ago %>
+  finished_at: <%= 1.hour.ago %>
+  winner: one
+
+invited_game:
+  challenger: one
+  opponent: two
+  status: invited
